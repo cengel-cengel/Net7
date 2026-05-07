@@ -4,7 +4,7 @@
 This file is read by Claude Code (CLI) at the start of every session.
 For the full engineering charter see `AGENTS.md`.
 For the delivery plan see `ROADMAP.md`.
-
+docs: link workflow.md from CLAUDE.md
 ---
 
 ## 1. Project context
