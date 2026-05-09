@@ -351,7 +351,7 @@ This is a **living document**. Sprint-1 follow-ups (Aggregate Sketches, Task 1.4
 
 Same terms grouped by category for targeted lookup. Term names only; see §3 for definitions.
 
-**Domain (Procurement & Products)** — 22 terms
+**Domain (Procurement & Products)** — 23 terms
 - Allergen Statement, Application, Batch, Botanical Name, CAS, Certificate, COA (Certificate of Analysis), INCI, Kosher / Halal, Lot, MOQ, Order, Order Line, Origin, Quote, RFQ, Sample, Sample Order, Sample Request, SDS (Safety Data Sheet), Specification, TDS (Technical Data Sheet), Variant.
 
 **Architecture (DDD & Systems)** — 10 terms
@@ -369,7 +369,7 @@ Same terms grouped by category for targeted lookup. Term names only; see §3 for
 **Procurement Process** — 5 terms
 - Buyer Journey, Decision Criteria, Lead Time, Procurement KPI, RFQ Workflow.
 
-Total: 22 + 10 + 6 + 6 + 5 + 5 = **54 terms** + Quote = **55**.
+Total: 23 + 10 + 6 + 6 + 5 + 5 = **55 terms**.
 
 ## 5. References
 
