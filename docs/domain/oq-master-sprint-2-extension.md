@@ -21,6 +21,7 @@ Six new clusters emerge from Sprint-2 mandate analysis:
 | C4 | OQ-053, OQ-054, OQ-055 | Pricing exposure policy |
 | C5 | OQ-056, OQ-057, OQ-058 | Payment readiness validation |
 | C6 | OQ-059, OQ-060, OQ-061 | CMS and content ownership |
+| C7 | OQ-062 | Infrastructure / hosting strategy (added 2026-05-11 housekeeping; migrated from strategic-foundation §12 OQ-59) |
 
 ---
 
@@ -43,6 +44,7 @@ Six new clusters emerge from Sprint-2 mandate analysis:
 | OQ-059 | ADR-0007 §2.5; strategic-foundation §11 Ownership-Gap OG-2 | Cross-cutting (V2) | Who authors CMS content when introduced in V2 — existing AOT-team augmented, new editorial hire, external agency, hybrid? AOT does not currently appear to have a dedicated content/marketing role. | Determines V2 readiness, hiring/contracting plan, CMS vendor selection criteria | M | AOT-Mgmt | Open |
 | OQ-060 | ADR-0007 §2.3; visual discovery Screenshot 3 (#D20072 inline-styled HTML) | Catalog | What is the brand-redesign migration trajectory — V1 sanitize-only is brittle; at what trigger does NET7-HTML migrate to CMS-managed? Brand-redesign initiative would force the question. | Triggers V2 CMS introduction; defines acceptable lifespan of sanitization-only approach | M | AOT-Mgmt + Marketing | Open |
 | OQ-061 | OQ-047 derivative; ADR-0007 §2.5 | Catalog (Cross-cutting) | Multi-language content strategy — human-translation, auto-translation (DeepL or equivalent), hybrid for non-regulatory vs regulatory? | Determines translation workflow, editorial role scope, V2 CMS feature requirements | M | AOT-Mgmt + Marketing | Open |
+| OQ-062 | ADR-0009 §1, §2.7 Gate G1; migrated from strategic-foundation §12 OQ-59 (2026-05-11 housekeeping) | Cross-cutting (Infrastructure) | Hosting strategy — cloud (which provider — Vercel + Railway proposed in ADR-0009, AWS/GCP/Azure alternatives, on-premise, hybrid)? AOT-IT-owned decision; gates ADR-0009 status transition from Proposed to Accepted. | Determines Phase-0 infrastructure choice; affects tech-stack lock-in, cost projections, AOT-IT operational responsibilities | H | AOT-IT | Open |
 
 ---
 
@@ -67,6 +69,7 @@ Each new OQ couples to one or more Sprint-1 aggregate sketches. Couplings are ex
 | OQ-059 | Cross-cutting | — | V2 only |
 | OQ-060 | Catalog | — | V2 trigger |
 | OQ-061 | Catalog | Documents-Compliance | V2 scope |
+| OQ-062 | Cross-cutting | — | ADR-0009 Gate G1 (infrastructure) |
 
 ---
 
@@ -94,19 +97,19 @@ This preserves Sprint-1 ADR-0004 Rule 2 (Discovery-Anchoring Mandate) — no orp
 
 | Risk Level | Count | OQs |
 |------------|-------|-----|
-| H (High) | 3 | OQ-049, OQ-051, OQ-053 |
+| H (High) | 4 | OQ-049, OQ-051, OQ-053, OQ-062 |
 | M (Medium) | 10 | OQ-047, OQ-048, OQ-052, OQ-054, OQ-055, OQ-056, OQ-058, OQ-059, OQ-060, OQ-061 |
 | L (Low) | 2 | OQ-050, OQ-057 |
 
-High-risk OQs (OQ-049, OQ-051, OQ-053) are Sprint-2 Phase-0 blocking — they shape Catalog projection, Documents scope, and Pricing exposure respectively. These must be answered before V1 implementation can begin.
+High-risk OQs (OQ-049, OQ-051, OQ-053, OQ-062) are Sprint-2 Phase-0 blocking — OQ-049/051/053 shape Catalog projection, Documents scope, and Pricing exposure respectively; OQ-062 gates ADR-0009 status transition (Proposed → Accepted). All must be answered before V1 implementation can fully begin.
 
 ---
 
 ## Section 7 — Merge-into-Master Instruction
 
 On commit, this extension document is merged into `/docs/domain/open-questions-master.md` as follows:
-1. OQ rows OQ-047 through OQ-061 append to the master triage table
-2. Cluster summary (§1) merges into master TOC
+1. OQ rows OQ-047 through OQ-062 append to the master triage table
+2. Cluster summary (§1) merges into master TOC (now C1-C7)
 3. Coupling (§3) merges into master coupling table
 4. Risk distribution (§6) updates master risk summary
 5. This extension file is then deleted (single-master-discipline preserved per Sprint-1 ADR-0004 Rule 1)

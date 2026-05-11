@@ -1165,24 +1165,34 @@ For an organization the size of AOT (probably <50 people total), this is too man
 
 # §12 Open Questions Requiring Discovery
 
+> **⚠ Namespace Clarification (2026-05-11 Housekeeping):**
+>
+> The OQ numbers in this section (OQ-47 through OQ-60) were drafted during strategic deliberation and **collide with the authoritative OQ-tracking namespace** in `/docs/domain/open-questions-master-sprint-2-extension.md` (also OQ-047 through OQ-061). The two number-ranges represent **independent question sets**, not the same OQs.
+>
+> The **authoritative OQ-tracking namespace** is the `open-questions-master` family. To prevent ongoing confusion, treat the IDs in this section as **historical deliberation IDs**, not as active OQ-references.
+>
+> **Migration status:** OQ-59 (Hosting strategy) was migrated to the extension as **OQ-062** for ADR-0009 dependency. Remaining items in this section are held for triage; when active follow-up is needed, they migrate to the master extension with new OQ-numbers, and this table row gains a "migrated to" annotation.
+>
+> Do not introduce new ADR or aggregate-extension references to OQ numbers in this section — use the master extension or migrate first.
+
 These augment Sprint-1's OQ-Master (46 OQs). New OQs from this architecture analysis:
 
-| ID | Question | Owner | Blocking |
-|----|----------|-------|----------|
-| OQ-47 | NET7 event emission capability (webhook/queue/CDC)? | TopM-Eng | Phase 0 |
-| OQ-48 | NET7 pricing-API response-time SLA at concurrent load? | TopM-Eng | Phase 0 |
-| OQ-49 | NET7 bulk-update event volume (estimated events/day)? | TopM-Eng | Phase 0 |
-| OQ-50 | Sample-pricing strategy: fixed €X or variable? | AOT-Sales | Phase 2 |
-| OQ-51 | Expected sample-order volume from anonymous public? | AOT-Sales | Phase 2 ROI |
-| OQ-52 | Top-20 customer migration sequence and timeline? | AOT-Sales | Phase 3 |
-| OQ-53 | Legacy portal sunset date acceptable? | Customer-PM | Phase 4 |
-| OQ-54 | DSGVO assessment for guest sessions + payment data? | AOT-Legal | Phase 2 |
-| OQ-55 | Search-engine target markets (DE only V1, or DE+EN+other)? | AOT-Mgmt | Phase 1 |
-| OQ-56 | Content velocity expectation (articles/month)? | Marketing | V2 |
-| OQ-57 | Punch-out customers (which procurement systems)? | AOT-Sales | V2 |
-| OQ-58 | NET7 maintenance window pattern + frequency? | TopM-Eng + AOT-IT | Phase 0 |
-| OQ-59 | Hosting strategy: cloud (which provider)? on-premise? hybrid? | AOT-IT | Phase 0 |
-| OQ-60 | Budget for V1 (engineering + tools + PSP fees)? | AOT-Mgmt | V1 scoping |
+| ID (deliberation) | Migration Status | Question | Owner | Blocking |
+|-------------------|------------------|----------|-------|----------|
+| OQ-47 | hold for triage | NET7 event emission capability (webhook/queue/CDC)? | TopM-Eng | Phase 0 |
+| OQ-48 | hold for triage | NET7 pricing-API response-time SLA at concurrent load? | TopM-Eng | Phase 0 |
+| OQ-49 | hold for triage | NET7 bulk-update event volume (estimated events/day)? | TopM-Eng | Phase 0 |
+| OQ-50 | hold for triage | Sample-pricing strategy: fixed €X or variable? | AOT-Sales | Phase 2 |
+| OQ-51 | hold for triage | Expected sample-order volume from anonymous public? | AOT-Sales | Phase 2 ROI |
+| OQ-52 | hold for triage | Top-20 customer migration sequence and timeline? | AOT-Sales | Phase 3 |
+| OQ-53 | hold for triage | Legacy portal sunset date acceptable? | Customer-PM | Phase 4 |
+| OQ-54 | hold for triage | DSGVO assessment for guest sessions + payment data? | AOT-Legal | Phase 2 |
+| OQ-55 | hold for triage | Search-engine target markets (DE only V1, or DE+EN+other)? | AOT-Mgmt | Phase 1 |
+| OQ-56 | hold for triage | Content velocity expectation (articles/month)? | Marketing | V2 |
+| OQ-57 | hold for triage | Punch-out customers (which procurement systems)? | AOT-Sales | V2 |
+| OQ-58 | hold for triage | NET7 maintenance window pattern + frequency? | TopM-Eng + AOT-IT | Phase 0 |
+| OQ-59 | **migrated → OQ-062** | Hosting strategy: cloud (which provider)? on-premise? hybrid? | AOT-IT | Phase 0 |
+| OQ-60 | hold for triage | Budget for V1 (engineering + tools + PSP fees)? | AOT-Mgmt | V1 scoping |
 
 ---
 
