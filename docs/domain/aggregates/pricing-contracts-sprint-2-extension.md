@@ -45,6 +45,22 @@ This document **extends** the Sprint-1 baseline (1.4.5) without modifying it. Sp
 
 // ASSUMPTION: only one PublicListPrice per product surface in V1 (single anchor). V2 could expose "from €X for Staffel-1, up to €Y for Staffel-5" range display if SEO/UX testing indicates value (OQ-053 follow-up).
 
+### 2.2.1 Customer-Category Mapping — derived from NET7 PriceClass assignment
+
+Visual discovery Screenshot 7 (NET7 Kundenadresse, "Auswahl"-Dropdown for Preisberechnung) shows that each CustomerAccount has a single PriceClass assigned. The set of PriceClass values produces a natural customer-categorization for downstream UX, analytics, and routing:
+
+| Customer Category | NET7 PriceClass Source | V1 Treatment | V2 Roadmap |
+|-------------------|------------------------|--------------|------------|
+| DIGITAL_CUSTOMER | Default class (typically "1-VK frei Haus") or no PriceClass-assignment yet | Standard authenticated B2B experience | Lead-conversion analytics, post-conversion onboarding flow |
+| DISTRIBUTOR | "3-Händlerpreis" PriceClass | Standard authenticated B2B experience | Bulk-pricing-grid UX, procurement-API access |
+| KEY_ACCOUNT | "P-individuelle Auswahl" or custom-negotiated PriceClass | Standard authenticated B2B experience | Account-manager-contact widget, custom-branded portal, approval-workflow access |
+
+Notes:
+- **V1 pricing-logic is identical across all three categories.** All authenticated B2B users see per-customer price derived from their PriceClass × Staffel × Product matrix. The category mapping is **derived at runtime** for analytics + UX-planning purposes, NOT a separate authentication flow.
+- Other PriceClass values exist in NET7 ("2-VK ex works", "4-Einstandspreis", "5-VK Prov", "8-Austrade" per Screenshot 7) and are valid for internal/special-case customers (employees, exporters). They are outside the 3-tier external categorization and treated as DIGITAL_CUSTOMER for UX-routing purposes in V1.
+- **DISTRIBUTOR does NOT introduce a separate authentication flow in V1.** Any framing suggesting otherwise (e.g., implementation-track system prompts) is overridden by this clarification.
+- The Customer-Category attribute is **derived, not stored independently**. Single source of truth: NET7 PriceClass-assignment. // ASSUMPTION: V2 may persist a denormalized category on the platform-side CustomerAccount for caching + routing performance.
+
 ### 2.3 PriceFallbackBehaviour — when NET7 unavailable
 
 Per Sprint-1 ADR-0003 Rule 5, fallback must be explicit, not implicit. Behaviour per user-type:
@@ -93,6 +109,7 @@ Both projections share the same Sprint-1 invariants on the underlying CustomerCo
 - **INV-015** (state-machine, new): when NET7 pricing-API unavailable, fallback transition follows the rule in §2.3 — anonymous → cached PublicListPrice (no visible degradation), authenticated → policy-driven (banner mandatory if degraded)
 - **INV-016** (cross-aggregate, new): RFQTrigger raised by Pricing module MUST be consumable by RFQ module without further aggregate-internal data exposure — only ProductId, RequestedQuantity, CustomerAccountReference (if authenticated) cross the boundary
 - **INV-017** (behavioural, new): PublicListPrice projection updates on `ListPriceUpdated` NET7 event MUST trigger Catalog read-model refresh (cross-module event coupling) — eventual consistency target <60s
+- **INV-018** (cross-aggregate, new): Customer-Category (DIGITAL_CUSTOMER / DISTRIBUTOR / KEY_ACCOUNT per §2.2.1) is **derived** at runtime from NET7 PriceClass-assignment. Pricing module MUST NOT persist the category as platform-side master data in V1. Single source of truth remains NET7 PriceClass.
 
 ## 5. Web/ERP Ownership Mapping
 
@@ -105,6 +122,7 @@ Both projections share the same Sprint-1 invariants on the underlying CustomerCo
 | PriceVisibilityRule policy | — | ✓ | Platform-side rule, not in NET7 |
 | Cache invalidation on update | — | ✓ | Platform subscribes to NET7 events |
 | RFQTrigger emission | — | ✓ | Platform-side, fed by NET7 "A.Anfrage" marker |
+| Customer-Category (DIGITAL_CUSTOMER/DISTRIBUTOR/KEY_ACCOUNT) | Source ✓ (PriceClass) | Derivation ✓ | Derived at runtime, not stored on platform side (INV-018) |
 
 ## 6. Cross-Aggregate References and OQs
 
@@ -123,6 +141,7 @@ Both projections share the same Sprint-1 invariants on the underlying CustomerCo
 ## 7. References
 
 - /docs/domain/aggregates/pricing-contracts.md (Sprint-1 baseline 1.4.5, 13/0/0 INV-distribution)
+- /docs/strategy/digital-revenue-platform.md (Principle 4 procurement-enablement — Customer-Category derives from PriceClass for downstream UX)
 - /docs/adr/0002-domain-patterns.md (Pattern 1, Pattern 5 Self-Report Discipline)
 - /docs/adr/0003-erp-boundary-rules.md (Rule 4 Authentication-Credential-Containment, Rule 5 Fallback-Discipline — both directly applied here)
 - /docs/adr/0006-modular-monolith.md (`pricing` module boundary; cross-module API contract)
