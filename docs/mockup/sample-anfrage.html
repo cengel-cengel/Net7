@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muster anfragen — AOT Speciality Ingredients</title>
+<meta name="description" content="Mustermengen kostenfrei zur Formulierungs-Evaluation. Keine Zahlung, keine Verpflichtung.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div style="display:flex; align-items:center; gap:3rem;">
+      <a href="index.html" class="brand-logo">AOT<span class="dot">.</span></a>
+      <nav class="site-nav">
+        <a href="katalog.html">Katalog</a>
+        <a href="index.html#pillars">Industries</a>
+        <a href="index.html#trust">Über AOT</a>
+        <a href="#" class="text-muted">Compliance</a>
+        <a href="#" class="text-muted">Kontakt</a>
+      </nav>
+    </div>
+    <div class="header-actions">
+      <button class="lang-switch">DE / EN</button>
+      <a href="#" class="btn-login">B2B LOGIN</a>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="index.html">AOT</a>
+    <span class="sep">/</span>
+    <span class="current">MUSTER ANFRAGEN</span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="discovery-banner reveal">
+    <span class="label">⊕ DISCOVERY-MOCKUP</span>
+    <p>Sample-Request-Flow ohne Payment (ADR-0008 Payment Strategy Deferred). Demonstriert GuestSession-Pattern (customer-account-sprint-2-extension §3) und Outbound-Write-Queue (ADR-0011 R4).</p>
+  </div>
+</div>
+
+<section style="padding: 2rem 0 4rem;">
+  <div class="container">
+    <div class="section-num mb-2">§ MUSTER-ANFRAGE</div>
+    <h1 class="font-display" style="font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1; letter-spacing: -0.03em; margin-bottom: 1rem; max-width: 800px;">
+      Muster anfragen.<br>
+      <span style="font-style: italic; color: var(--text-soft);">Kostenfrei. Keine Zahlung.</span>
+    </h1>
+    <p style="max-width: 600px; color: var(--text-soft); font-size: 1.05rem;">Drei Schritte — Produkt wählen, Kontaktdaten ergänzen, Anfrage absenden. Versand erfolgt in 3–5 Werktagen ohne Bestellung oder Vertragspflicht.</p>
+  </div>
+</section>
+
+<section style="padding-bottom: 6rem;">
+  <div class="container" style="max-width: 900px;">
+
+    <div class="form-step-indicator">
+      <div class="form-step active" id="step-tab-1" onclick="goToStep(1)">
+        <span class="step-num">01</span>
+        PRODUKT &amp; MENGE
+      </div>
+      <div class="form-step" id="step-tab-2" onclick="goToStep(2)">
+        <span class="step-num">02</span>
+        KONTAKTDATEN
+      </div>
+      <div class="form-step" id="step-tab-3" onclick="goToStep(3)">
+        <span class="step-num">03</span>
+        ANFRAGE GESENDET
+      </div>
+    </div>
+
+    <div class="form-section active" id="step-1">
+      <h2 class="font-display" style="font-size: 2rem; margin-bottom: 0.5rem;">Produkt &amp; Mustermenge</h2>
+      <p style="color: var(--text-soft); margin-bottom: 2.5rem;">Welches Produkt möchten Sie evaluieren? Sie können bis zu 3 Muster pro Anfrage anfordern.</p>
+
+      <div style="border: 1px solid var(--stone); padding: 1.5rem; background: white; margin-bottom: 1rem; display: flex; gap: 1.5rem; align-items: center;">
+        <div style="width: 80px; height: 100px; background: linear-gradient(180deg, #F5F1E8 0%, #EBE5D5 100%); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <svg viewBox="0 0 200 280" style="width: 60%; height: 80%;">
+            <path d="M70 40 L70 70 Q70 80 75 85 L75 240 Q75 260 90 260 L110 260 Q125 260 125 240 L125 85 Q130 80 130 70 L130 40 Z" stroke="#1A1A1A" stroke-width="3" fill="rgba(255,255,255,0.4)"/>
+            <rect x="80" y="130" width="40" height="70" stroke="#D20072" stroke-width="1" fill="rgba(210,0,114,0.04)"/>
+          </svg>
+        </div>
+        <div style="flex: 1;">
+          <div class="pid" style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.1em; margin-bottom: 0.25rem;">10501 · KOSMETISCH</div>
+          <div class="font-display" style="font-size: 1.5rem; font-weight: 300; margin-bottom: 0.25rem;">Aprikosenkernöl</div>
+          <div style="font-family: 'Fraunces', serif; font-style: italic; font-size: 0.875rem; color: var(--text-soft);">kaltgepresst · bio</div>
+        </div>
+        <div>
+          <label style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; color: var(--text-muted); text-transform: uppercase; display: block; margin-bottom: 0.5rem;">MENGE</label>
+          <select style="font-family: 'DM Sans', sans-serif; font-size: 1rem; padding: 0.65rem 1rem; border: 1px solid var(--stone); background: white;">
+            <option>50 ml</option>
+            <option>200 ml</option>
+            <option>500 ml</option>
+          </select>
+        </div>
+        <button style="background: transparent; border: none; color: var(--text-muted); cursor: pointer; font-size: 1.2rem; padding: 0.5rem;" title="Entfernen">×</button>
+      </div>
+
+      <button style="width: 100%; border: 1px dashed var(--stone); background: transparent; padding: 1.25rem; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; color: var(--text-muted); cursor: pointer; transition: all 0.2s ease; margin-bottom: 2.5rem;">+ WEITERES PRODUKT HINZUFÜGEN (MAX. 3)</button>
+
+      <div class="form-grid">
+        <div class="form-field full">
+          <label>WOFÜR EVALUIEREN SIE?</label>
+          <select>
+            <option>— bitte wählen —</option>
+            <option>Formulierungsentwicklung — Naturkosmetik</option>
+            <option>Formulierungsentwicklung — Pflegeöl/Body</option>
+            <option>Formulierungsentwicklung — Lebensmittel</option>
+            <option>Qualitäts-/QM-Evaluation für Bestandsprodukt</option>
+            <option>Anderes — bitte unten beschreiben</option>
+          </select>
+        </div>
+        <div class="form-field full">
+          <label>NOTIZ ZUR ANFRAGE (OPTIONAL)</label>
+          <textarea placeholder="Falls Sie spezifische Charge, Zertifikat oder Analyse-Parameter benötigen — gerne hier hinterlegen."></textarea>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <a href="katalog.html" class="btn-outline">← ZURÜCK ZUM KATALOG</a>
+        <button onclick="goToStep(2)" class="btn-primary">WEITER ZU KONTAKTDATEN</button>
+      </div>
+    </div>
+
+    <div class="form-section" id="step-2">
+      <h2 class="font-display" style="font-size: 2rem; margin-bottom: 0.5rem;">Kontaktdaten</h2>
+      <p style="color: var(--text-soft); margin-bottom: 2.5rem;">Damit wir Ihnen die Muster zusenden können. Sie können auch direkt einen B2B-Account anlegen, ist aber optional.</p>
+
+      <div class="form-grid">
+        <div class="form-field"><label>VORNAME *</label><input type="text" placeholder="Anna" /></div>
+        <div class="form-field"><label>NACHNAME *</label><input type="text" placeholder="Schmidt" /></div>
+        <div class="form-field"><label>FIRMA *</label><input type="text" placeholder="Müller Naturkosmetik GmbH" /></div>
+        <div class="form-field"><label>POSITION</label><input type="text" placeholder="z.B. Product Developer" /></div>
+        <div class="form-field"><label>E-MAIL (GESCHÄFTLICH) *</label><input type="email" placeholder="anna.schmidt@firma.de" /></div>
+        <div class="form-field"><label>TELEFON</label><input type="tel" placeholder="+49 ..." /></div>
+        <div class="form-field full">
+          <label>VERSANDADRESSE (FIRMA) *</label>
+          <input type="text" placeholder="Straße, Hausnummer" style="margin-bottom: 0.75rem;" />
+          <div style="display: grid; grid-template-columns: 100px 1fr 1fr; gap: 0.75rem;">
+            <input type="text" placeholder="PLZ" />
+            <input type="text" placeholder="Stadt" />
+            <input type="text" placeholder="Land" value="Deutschland" />
+          </div>
+        </div>
+        <div class="form-field full">
+          <label style="display: flex; gap: 0.75rem; align-items: flex-start; cursor: pointer;">
+            <input type="checkbox" style="margin-top: 0.2rem;" />
+            <span style="font-family: 'DM Sans', sans-serif; font-size: 0.875rem; text-transform: none; letter-spacing: normal; color: var(--text-soft); line-height: 1.5;">Ich möchte AOT-Updates zu neuen Rohstoffen, Sourcing-Hinweisen und Compliance-Themen erhalten (max. 1× pro Quartal, jederzeit abbestellbar).</span>
+          </label>
+        </div>
+        <div class="form-field full" style="background: var(--bg-warm); padding: 1.25rem; border: 1px solid var(--stone);">
+          <label style="display: flex; gap: 0.75rem; align-items: flex-start; cursor: pointer;">
+            <input type="checkbox" style="margin-top: 0.2rem;" />
+            <span style="font-family: 'DM Sans', sans-serif; font-size: 0.875rem; text-transform: none; letter-spacing: normal; color: var(--text-soft); line-height: 1.5;">
+              <strong style="color: var(--text);">Optional: B2B-Account jetzt anlegen.</strong><br>
+              Sie erhalten dann Zugang zu kundenspezifischen Preisen, dem Vollkatalog und allen Compliance-Dokumenten. Wir senden Ihnen ein Setup-Link.
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button onclick="goToStep(1)" class="btn-outline">← ZURÜCK</button>
+        <button onclick="goToStep(3)" class="btn-primary">ANFRAGE ABSENDEN</button>
+      </div>
+
+      <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.1em; margin-top: 2rem; text-align: center;">KEINE ZAHLUNG · KEINE BESTELLUNG · KEINE VERPFLICHTUNG</p>
+    </div>
+
+    <div class="form-section" id="step-3">
+      <div style="text-align: center; padding: 3rem 0;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.2em; color: var(--magenta); margin-bottom: 1.5rem;">ANFRAGE-NR · AOT–2026–05111842</div>
+        <h2 class="font-display" style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1; margin-bottom: 1.5rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+          Danke,<br>
+          <span style="font-style: italic;">Ihre Anfrage ist eingegangen.</span>
+        </h2>
+        <p style="max-width: 550px; margin: 0 auto 3rem; color: var(--text-soft); font-size: 1.05rem;">Wir haben Ihre Muster-Anfrage erhalten. Eine Bestätigung wird in den nächsten Minuten an Ihre E-Mail-Adresse versendet. Bei Rückfragen erreichen Sie uns unter <a href="mailto:samples@aot.de" style="color: var(--magenta);">samples@aot.de</a>.</p>
+      </div>
+
+      <div style="border: 1px solid var(--stone); padding: 2rem; background: white;">
+        <div class="section-num mb-3">WAS PASSIERT JETZT</div>
+        <div style="display: grid; gap: 1.5rem; grid-template-columns: 1fr;">
+          <div style="display: grid; grid-template-columns: 60px 1fr; gap: 1rem; align-items: start;">
+            <div style="font-family: 'Fraunces', serif; font-size: 2.5rem; line-height: 1; color: var(--magenta);">01</div>
+            <div>
+              <h4 class="font-display" style="font-size: 1.15rem; margin-bottom: 0.25rem; font-weight: 400;">Anfrage geht an Sourcing-Team</h4>
+              <p style="color: var(--text-soft); font-size: 0.9rem;">Heute · Eingang im AOT-Sourcing-System (NET7). Bestätigungs-Mail an Sie.</p>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 60px 1fr; gap: 1rem; align-items: start;">
+            <div style="font-family: 'Fraunces', serif; font-size: 2.5rem; line-height: 1; color: var(--magenta);">02</div>
+            <div>
+              <h4 class="font-display" style="font-size: 1.15rem; margin-bottom: 0.25rem; font-weight: 400;">Charge-Auswahl &amp; Vorbereitung</h4>
+              <p style="color: var(--text-soft); font-size: 0.9rem;">1–2 Werktage · Aktuelle Charge wird ausgewählt, COA + TDS beigelegt.</p>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 60px 1fr; gap: 1rem; align-items: start;">
+            <div style="font-family: 'Fraunces', serif; font-size: 2.5rem; line-height: 1; color: var(--magenta);">03</div>
+            <div>
+              <h4 class="font-display" style="font-size: 1.15rem; margin-bottom: 0.25rem; font-weight: 400;">Versand</h4>
+              <p style="color: var(--text-soft); font-size: 0.9rem;">2–3 Werktage · Versand per Paket-Dienstleister, Tracking-Link folgt.</p>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 60px 1fr; gap: 1rem; align-items: start;">
+            <div style="font-family: 'Fraunces', serif; font-size: 2.5rem; line-height: 1; color: var(--magenta);">04</div>
+            <div>
+              <h4 class="font-display" style="font-size: 1.15rem; margin-bottom: 0.25rem; font-weight: 400;">Follow-up</h4>
+              <p style="color: var(--text-soft); font-size: 0.9rem;">~14 Tage nach Versand · Wir fragen kurz nach, wie die Evaluation lief — keine Verpflichtung.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-actions" style="justify-content: center;">
+        <a href="katalog.html" class="btn-outline">WEITERE PRODUKTE ANSEHEN</a>
+        <a href="index.html" class="btn-primary">ZUR STARTSEITE</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="grid">
+      <div>
+        <a href="index.html" class="brand-logo">AOT<span class="dot">.</span></a>
+        <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.1em; line-height: 1.6; margin-top: 0.75rem;">SPECIALITY<br>INGREDIENTS<br>SINCE 1979</p>
+      </div>
+      <div>
+        <h4>Katalog</h4>
+        <ul>
+          <li><a href="katalog.html">Kosmetische Öle</a></li>
+          <li><a href="katalog.html">Lebensmittel</a></li>
+          <li><a href="katalog.html">Wirkstoffe</a></li>
+          <li><a href="katalog.html">Zertifiziert Bio</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Service</h4>
+        <ul>
+          <li><a href="sample-anfrage.html">Muster anfragen</a></li>
+          <li><a href="#">B2B-Account</a></li>
+          <li><a href="#">Compliance-Docs</a></li>
+          <li><a href="#">Custom Sourcing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Unternehmen</h4>
+        <ul>
+          <li><a href="#">Über AOT</a></li>
+          <li><a href="#">Nachhaltigkeit</a></li>
+          <li><a href="#">Kontakt</a></li>
+          <li><a href="#">Impressum</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <p style="font-size: 0.875rem; color: var(--text-soft); line-height: 1.6;">
+          AOT GmbH<br>Industriestraße 23<br>D–XXXXX Musterstadt<br>
+          <a href="mailto:info@aot.de" style="color: var(--magenta);">info@aot.de</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 AOT GMBH · ALLE RECHTE VORBEHALTEN</div>
+      <div class="links">
+        <a href="#">DATENSCHUTZ</a>
+        <a href="#">AGB</a>
+        <a href="#">LIEFERBEDINGUNGEN</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function goToStep(n) {
+    document.querySelectorAll('.form-step').forEach((tab, i) => {
+      tab.classList.toggle('active', i + 1 === n);
+      tab.classList.toggle('completed', i + 1 < n);
+    });
+    document.querySelectorAll('.form-section').forEach((sec, i) => {
+      sec.classList.toggle('active', i + 1 === n);
+    });
+    document.querySelector('.form-step-indicator').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+</script>
+
+</body>
+</html>
