@@ -273,3 +273,61 @@ Success is:
 - sales uses workflows
 - customer service trusts the platform
 - system survives handover
+
+## Sprint 2 — Strategic Foundation + Architecture (2026-05-09 through 2026-05-11)
+
+Sprint 2 established the constitutional architecture for the unified Digital Revenue Platform per the AOT mandate "one platform, demand generation + procurement enablement".
+
+### Sprint-2 Foundation
+- `docs/architecture/strategic-foundation.md` — 1255-line strategic deliberation document (14 sections)
+- 4 ADRs Accepted: 0005 Strangler-Fig, 0006 Modular Monolith, 0007 Hybrid Content Strategy, 0008 Payment Strategy (Deferred)
+- 5 Aggregate Sprint-2 Extensions: Catalog, Pricing, Sample, Customer-Account, Documents
+- OQ-Master Sprint-2 Extension — 15 new OQs (OQ-047 to OQ-061) across 6 clusters
+
+### Phase-1 Consolidation
+- `docs/strategy/digital-revenue-platform.md` — Constitutional Strategy with 5 Architecture Principles + Curated Hero Portfolio V1 mandate
+- `docs/discovery/aot-discovery-phase-0-brief.md` — 3 focused stakeholder sessions for the 4 H-Risk OQs
+- Pricing Extension: DISTRIBUTOR / KEY_ACCOUNT / DIGITAL_CUSTOMER category mapping (derived from NET7 PriceClass per INV-018)
+
+### Phase-2 Tech-Stack
+- ADR-0009 Tech-Stack (Proposed): Vercel + Railway + Next.js + Postgres, gated on G1-G4 (Hosting, Team-Capability, Cost, Phase-0-Spike)
+
+### Housekeeping
+- OQ-namespace conflict resolved: strategic-foundation §12 OQ-numbering relabeled as historical deliberation, hosting-OQ migrated to extension as OQ-062
+
+### Phase-3 Pre-Discovery
+- `docs/discovery/hero-portfolio-selection-framework.md` — Operational tool for Discovery Session 1 (Mgmt + Sales); 4 scoring dimensions + workflow + content-investment spec
+- ADR-0010 Identity Provider (Proposed): Auth0 V1 with fallbacks (Cognito, Keycloak SaaS), gated on G1-G4
+- ADR-0011 Read-Model Architecture (Accepted): Constitutional 5-rule pattern codifying emergent read-model approach across all 5 aggregate extensions
+- This ROADMAP update
+
+### Sprint-2 Status
+**Discovery-Ready.** Constitutional layer complete; implementation gated on Discovery outcomes.
+
+### Open H-Risk OQs (Discovery-blocking)
+- OQ-049 — Hero-Portfolio Curation (reframed from generic Public-Visibility-Filter)
+- OQ-051 — DocumentScope Mapping (NET7 B2B-Dokumentenanzeige → 4-tier classification with Default-Fail-Safe)
+- OQ-053 — Public List-Price Anchor Strategy
+- OQ-062 — Hosting Strategy (ADR-0009 Gate G1)
+
+### Next Phase Triggers
+- Discovery Sessions execute (3 stakeholder groups: Mgmt+Sales / Compliance / IT)
+- 4 H-Risk OQs closed with Triplet-Closer (Decision + Artifact-Update + Engineering-Story) per ADR-0004 Rule 6
+- ADR-0009 + ADR-0010 transition from Proposed to Accepted after Gates G1-G4 pass
+- Phase-0 NET7 Adapter Spike begins
+
+### ADR Inventory After Sprint-2 Phase-3
+
+| ADR | Status | Topic |
+|-----|--------|-------|
+| 0001 | Accepted | Stack & Deployment (Sprint-1) |
+| 0002 | Accepted | Domain Patterns (Sprint-1) |
+| 0003 | Accepted | ERP Boundary Rules (Sprint-1) |
+| 0004 | Accepted | Open-Question Governance (Sprint-1) |
+| 0005 | Accepted | Strangler-Fig Migration |
+| 0006 | Accepted | Modular Monolith V1 |
+| 0007 | Accepted | Hybrid Content Strategy |
+| 0008 | Accepted | Payment Strategy (Deferred) |
+| 0009 | Proposed | Technology Stack (gated G1-G4) |
+| 0010 | Proposed | Identity Provider Auth0 (gated G1-G4) |
+| 0011 | Accepted | Read-Model Architecture (constitutional) |
